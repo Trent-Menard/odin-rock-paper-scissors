@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset = "UTF-8">
-    <title>Rock, Paper, Scissors</title>
-    <script src = "GameHandler.js"></script>
+    <title>I want to play a game.</title>
+    <link rel="stylesheet" href="main.css">
+    <script src = "GameHandler.js" defer></script>
 </head>
 <body>
+
+    <div id="main">
+        <!-- In JS, write as array & use SetInterval() to append each char after 1 sec. Call after DOM is fully loaded. -->
+        <h1 class="GameText">I want</h1>
+        <h1 class="GameText">to play</h1>
+        <h1 class="GameText">a game.</h1>
+
+        <div>
+            <button id="ButtonChoiceRock" class="Button">Rock</button>
+            <button id="ButtonChoicePaper" class="Button">Paper</button>
+            <button id="ButtonChoiceScissors" class="Button">Scissors</button>
+        </div>
+    </div>
+
+
 </body>
 </html>

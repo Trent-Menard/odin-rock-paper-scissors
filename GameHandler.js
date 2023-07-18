@@ -1,36 +1,28 @@
 
+document.getElementById("ButtonChoiceRock").addEventListener("click", () => playRound("rock", getComputerChoice()));
+document.getElementById("ButtonChoicePaper").addEventListener("click", () => playRound("paper", getComputerChoice()));
+document.getElementById("ButtonChoiceScissors").addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+const divElement = document.createElement("div");
+divElement.setAttribute("id", "ResultsDiv");
+document.body.appendChild(divElement);
+
 function getComputerChoice(){
     let choices = ["rock", "paper", "scissors"];
     // Return random Int [0-3] corresponding to choice
     return choices[Math.floor(Math.random() * 3)];
 }
 
-function getPlayerChoice() {
-    let choice = prompt("Rock, Paper, or Scissors?");
-
-    do {
-        if (choice === "rock" || choice === "paper" || choice === "scissors")
-            break;
-
-        choice = prompt("Invalid choice. Rock, Paper, or Scissors?");
-
-        if (choice !== null && choice !== "")
-            choice = choice.toLowerCase();
-
-    } while (choice !== "rock" && choice !== "paper" && choice !== "scissors");
-
-    return choice;
-}
-
 function playRound(playerSelection, computerSelection) {
-    // Rock beats scissors
-    // Scissors beats Paper
-    // Paper beats rock
 
     console.log("Computer chose: " + computerSelection + " and Player chose: " + playerSelection + "\n");
 
     if (computerSelection === playerSelection)
         return "Draw!";
+
+    // Rock beats scissors
+    // Scissors beats Paper
+    // Paper beats rock
 
     else if (computerSelection === "rock" && playerSelection !== "paper" ||
         computerSelection === "paper" && playerSelection !== "scissors" ||
