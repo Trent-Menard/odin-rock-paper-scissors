@@ -7,6 +7,22 @@ const divElement = document.createElement("div");
 divElement.setAttribute("id", "ResultsDiv");
 document.body.appendChild(divElement);
 
+const gameText = "I want to play a game.";
+
+for (i = 1; i <=3; i++){
+    const gameTextElement = document.createElement("h1");
+    gameTextElement.setAttribute("id", "GameText" + i);
+    const gameTextElementData = document.getElementById("GameText" + i);
+
+    // setTimeout(() => {
+    //     for (j = 0; j <=5; j++){
+    //         console.log(j);
+    //     }
+    // }, 5000);
+
+    document.body.append(gameTextElement);
+}
+
 function getComputerChoice(){
     let choices = ["rock", "paper", "scissors"];
     // Return random Int [0-3] corresponding to choice
