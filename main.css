@@ -24,13 +24,33 @@ body {
 }
 
 .Button {
-    padding: 20px;
+    padding: 100px;
     margin: 80px;
-    border-radius: 12px;
+    border: none;
+    /* border-radius: 12px; */
+}
+
+.Button:hover {
+    cursor: grab;
 }
 
 @font-face {
     font-family: 'death_spiritregular';
     src: url('death_spirit-webfont.woff2') format('woff2'),
     url('death_spirit-webfont.woff') format('woff');
+}
+
+#ButtonChoiceRock {
+    background: url(Rock.png) no-repeat;
+    background-size: 200px;
+}
+
+#ButtonChoicePaper {
+    background: url(Paper.png) no-repeat;
+    background-size: 200px;
+}
+
+#ButtonChoiceScissors {
+    background: url(Scissors.png) no-repeat;
+    background-size: 200px;
 }
