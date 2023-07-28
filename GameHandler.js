@@ -1,6 +1,5 @@
 
 playWelcomeMsg();
-playWelcomeMsg();
 
 function playWelcomeMsg() {
     const gameText = "I want to play a game.";
@@ -41,29 +40,26 @@ function playWelcomeMsg() {
         generateStartButton();
     }, 7500);
 
-function playWelcomeMsg() {
-    const gameText = "I want to play a game.";
-    const gameText2 = "5 Rounds. Live or die, make your choice.";
 }
 
 function generateStartButton(){
-        let divElement = document.createElement("div");
-        divElement.setAttribute("id", "buttonsDiv");
-        document.getElementsByTagName("main")[0].append(divElement);
+    let divElement = document.createElement("div");
+    divElement.setAttribute("id", "buttonsDiv");
+    document.getElementsByTagName("main")[0].append(divElement);
 
-        let startButton = document.createElement("button");
-        startButton.setAttribute("id", "ButtonStart");
-        startButton.textContent = "Start Game";
-        document.getElementById("buttonsDiv").append(startButton);
+    let startButton = document.createElement("button");
+    startButton.setAttribute("id", "ButtonStart");
+    startButton.textContent = "Start Game";
+    document.getElementById("buttonsDiv").append(startButton);
 
-        document.getElementById("ButtonStart").addEventListener("click", () => {
-            document.getElementById("buttonsDiv").removeChild(document.getElementById("ButtonStart"));
+    document.getElementById("ButtonStart").addEventListener("click", () => {
+        document.getElementById("buttonsDiv").removeChild(document.getElementById("ButtonStart"));
 
-            document.getElementById("GameText4").remove();
-            document.getElementById("GameText5").remove();
+        document.getElementById("GameText4").remove();
+        document.getElementById("GameText5").remove();
 
-            generateChoiceButtons();
-        });
+        generateChoiceButtons();
+    });
 }
 
 function generateChoiceButtons() {
@@ -77,102 +73,6 @@ function generateChoiceButtons() {
     document.getElementById("buttonsDiv").append(buttonChoicePaper);
     document.getElementById("ButtonChoicePaper").addEventListener("click", () => startGame("paper"));
 
-
-    let buttonChoiceScissors = document.createElement("button");
-    buttonChoiceScissors.setAttribute("id", "ButtonChoiceScissors");
-    document.getElementById("buttonsDiv").append(buttonChoiceScissors);
-    document.getElementById("ButtonChoiceScissors").addEventListener("click", () => startGame("scissors"));
-}
-
-function animateGameText(text, textStartIdx, textEndIdx, targetElement, miliSecDelay) {
-    let index = textStartIdx;
-    let interval;
-
-    interval = setInterval( () => {
-        if (index === textEndIdx)
-            clearInterval(interval);
-
-        targetElement.textContent += text[index];
-        index++;
-
-    }, miliSecDelay);
-}
-
-const gameText = "I want to play a game.";
-
-    // Create 3 h1 elements in format: GameText#
-    for (let i = 1; i <= 5; i++) {
-        const gameTextElement = document.createElement("h1");
-        gameTextElement.setAttribute("id", "GameText" + i);
-        gameTextElement.setAttribute("class", "GameText");
-        document.getElementsByTagName("main")[0].append(gameTextElement);
-    }
-
-    animateGameText(gameText, 0, 5, document.getElementById("GameText1"), 100);
-
-    setTimeout(() => {
-        animateGameText(gameText, 7, 13, document.getElementById("GameText2"), 100);
-    }, 500);
-
-    setTimeout(() => {
-        animateGameText(gameText, 15, 21, document.getElementById("GameText3"), 100);
-    }, 1200);
-
-    setTimeout(() => {
-        document.getElementById("GameText1").remove();
-        document.getElementById("GameText2").remove();
-        document.getElementById("GameText3").remove();
-
-        animateGameText(gameText2, 0, 8, document.getElementById("GameText4"), 100);
-
-    }, 2500);
-
-    setTimeout(() => {
-        animateGameText(gameText2, 10, 39, document.getElementById("GameText4"), 100);
-    }, 4000);
-
-    setTimeout(() => {
-        generateStartButton();
-    }, 7500);
-
-}
-
-function generateStartButton(){
-        let divElement = document.createElement("div");
-        divElement.setAttribute("id", "buttonsDiv");
-        document.getElementsByTagName("main")[0].append(divElement);
-
-        let startButton = document.createElement("button");
-        startButton.setAttribute("id", "ButtonStart");
-        startButton.textContent = "Start Game";
-        document.getElementById("buttonsDiv").append(startButton);
-
-        document.getElementById("ButtonStart").addEventListener("click", () => {
-            document.getElementById("buttonsDiv").removeChild(document.getElementById("ButtonStart"));
-
-            document.getElementById("GameText4").remove();
-            document.getElementById("GameText5").remove();
-
-            generateChoiceButtons();
-        });
-}
-
-function generateChoiceButtons() {
-    let buttonChoiceRock = document.createElement("button");
-    buttonChoiceRock.setAttribute("id", "ButtonChoiceRock");
-    document.getElementById("buttonsDiv").append(buttonChoiceRock);
-    document.getElementById("ButtonChoiceRock").addEventListener("click", () => startGame("rock"));
-
-    let buttonChoicePaper = document.createElement("button");
-    buttonChoicePaper.setAttribute("id", "ButtonChoicePaper");
-    document.getElementById("buttonsDiv").append(buttonChoicePaper);
-    document.getElementById("ButtonChoicePaper").addEventListener("click", () => startGame("paper"));
-
-    // setTimeout(() => {
-    //     for (j = 0; j <=5; j++){
-    //         console.log(j);
-    //     }
-    // }, 5000);
 
     let buttonChoiceScissors = document.createElement("button");
     buttonChoiceScissors.setAttribute("id", "ButtonChoiceScissors");
